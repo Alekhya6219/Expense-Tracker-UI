@@ -1,0 +1,181 @@
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 16px;
+}
+
+.title {
+  font-size: 28px;
+  margin-bottom: 4px;
+}
+
+/* ─── Filter bar ─────────────────────────────────────────────────── */
+.filterBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.pills {
+  display: flex;
+  gap: 6px;
+}
+
+.pill {
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.pill:hover { border-color: var(--accent); color: var(--accent-light); }
+
+.pillActive {
+  background: var(--accent-glow);
+  border-color: var(--accent);
+  color: var(--accent-light);
+}
+
+/* ─── Table ──────────────────────────────────────────────────────── */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.table thead tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.table th {
+  padding: 14px 20px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.row {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.12s;
+}
+.row:last-child { border-bottom: none; }
+.row:hover { background: var(--bg-hover); }
+
+.table td {
+  padding: 14px 20px;
+  vertical-align: middle;
+}
+
+.titleCell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.expenseTitle {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.expenseNotes {
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 220px;
+}
+
+.dateCell {
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.amountCell {
+  text-align: right;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+/* ─── Row actions ────────────────────────────────────────────────── */
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.actionBtn:hover { background: var(--bg-hover); color: var(--text); }
+
+.deleteBtn:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--red);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+.deleteBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ─── Loading / empty ────────────────────────────────────────────── */
+.loadingRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+}
+
+/* ─── Pagination ─────────────────────────────────────────────────── */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  padding: 0 4px;
+}
+
+.pageInfo {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.pageButtons {
+  display: flex;
+  gap: 8px;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .table th:nth-child(3),
+  .table td:nth-child(3) { display: none; }
+
+  .expenseNotes { display: none; }
+}
